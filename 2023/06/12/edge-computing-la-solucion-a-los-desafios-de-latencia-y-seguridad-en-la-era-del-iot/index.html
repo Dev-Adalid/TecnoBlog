@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="http://tecnoblog-prueba.netlify.app/2023/06/12/edge-computing-la-solucion-a-los-desafios-de-latencia-y-seguridad-en-la-era-del-iot/img/favicon.ico">
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    
+    <meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Tecno blog &raquo; Edge Computing: la solución a los desafíos de latencia y seguridad en la era del IoT RSS de los comentarios" href="http://tecnoblog-prueba.netlify.app/2023/06/12/edge-computing-la-solucion-a-los-desafios-de-latencia-y-seguridad-en-la-era-del-iot/feed/">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/tecnoblog-prueba.netlify.app\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("🏳️‍⚧️","🏳️​⚧️")?!1:!s("🇺🇳","🇺​🇳")&&!s("🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!s("🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="http://tecnoblog-prueba.netlify.app/wp-includes/css/dist/block-library/style.min.css?ver=6.2.2" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="http://tecnoblog-prueba.netlify.app/wp-includes/css/classic-themes.min.css?ver=6.2.2" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="style-css" href="http://tecnoblog-prueba.netlify.app/wp-content/themes/sitioWeb/style.css?ver=6.2.2" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="http://tecnoblog-prueba.netlify.app/wp-content/themes/sitioWeb/css/bootstrap.min.css?ver=6.2.2" type="text/css" media="all">
+<link rel="stylesheet" id="blog-css" href="http://tecnoblog-prueba.netlify.app/wp-content/themes/sitioWeb/css/blog.css?ver=6.2.2" type="text/css" media="all">
+<script type="text/javascript" src="http://tecnoblog-prueba.netlify.app/wp-includes/js/jquery/jquery.min.js?ver=3.6.4" id="jquery-core-js"></script>
+<script type="text/javascript" src="http://tecnoblog-prueba.netlify.app/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="http://tecnoblog-prueba.netlify.app/wp-content/themes/sitioWeb/js/popper.min.js?ver=6.2.2" id="popper-js"></script>
+<script type="text/javascript" src="http://tecnoblog-prueba.netlify.app/wp-content/themes/sitioWeb/js/bootstrap.min.js?ver=6.2.2" id="bootstrap-js"></script>
+<script type="text/javascript" src="http://tecnoblog-prueba.netlify.app/wp-content/themes/sitioWeb/js/holder.min.js?ver=6.2.2" id="holder-js"></script>
+<link rel="https://api.w.org/" href="http://tecnoblog-prueba.netlify.app/wp-json/">
+<link rel="alternate" type="application/json" href="http://tecnoblog-prueba.netlify.app/wp-json/wp/v2/posts/186">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://tecnoblog-prueba.netlify.app/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://tecnoblog-prueba.netlify.app/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.2.2">
+<link rel="canonical" href="http://tecnoblog-prueba.netlify.app/2023/06/12/edge-computing-la-solucion-a-los-desafios-de-latencia-y-seguridad-en-la-era-del-iot/">
+<link rel="shortlink" href="http://tecnoblog-prueba.netlify.app/?p=186">
+<link rel="alternate" type="application/json+oembed" href="http://tecnoblog-prueba.netlify.app/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ftecnoblog-prueba.netlify.app%2F2023%2F06%2F12%2Fedge-computing-la-solucion-a-los-desafios-de-latencia-y-seguridad-en-la-era-del-iot%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://tecnoblog-prueba.netlify.app/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ftecnoblog-prueba.netlify.app%2F2023%2F06%2F12%2Fedge-computing-la-solucion-a-los-desafios-de-latencia-y-seguridad-en-la-era-del-iot%2F#038;format=xml">
+		<style type="text/css" id="wp-custom-css">.bg-dark {
+  /*background-color: #343a40!important;*/
+  background-image: url("http://localhost/img/sale.png")!important;
+
+}</style>
+		
+  </head>
+
+  <body class="post-template-default single single-post postid-186 single-format-standard wp-custom-logo">
+
+    <div class="container">
+      <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1">
+            
+          </div>
+          <div class="col-4 text-center">
+            <a class="blog-header-logo text-dark" href="http://tecnoblog-prueba.netlify.app/">
+            Tecno blog            </a>
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center">
+            
+          </div>
+        </div>
+      </header>
+
+      <div class="nav-scroller py-1 mb-2">
+        
+       <nav class="nav d-flex" id="menu-menu"> <li id="menu-item-116" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-116 p-2 text-muted"><a href="http://tecnoblog-prueba.netlify.app/">Inicio</a></li>
+<li id="menu-item-184" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-184 p-2 text-muted">
+<a target="_blank" rel="noopener" href="http://tecnoblog-prueba.netlify.app/herramientas-online/">Herramientas online</a>
+<ul class="sub-menu">
+	<li id="menu-item-238" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-238 p-2 text-muted"><a href="http://squizlabs.github.io/HTML_CodeSniffer/">HTML CodeSniffer</a></li>
+	<li id="menu-item-239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-239 p-2 text-muted"><a href="https://www.pdfforge.org/pdfcreator">PDFCreator</a></li>
+</ul>
+</li>
+<li id="menu-item-185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-185 p-2 text-muted">
+<a href="http://tecnoblog-prueba.netlify.app/ebook-social-media/">Ebook Social Media</a>
+<ul class="sub-menu">
+	<li id="menu-item-240" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-240 p-2 text-muted"><a href="https://fundacionorange.es/areas/25_publicaciones/WEB_DEF_COMPLETO.pdf">web 2.0</a></li>
+	<li id="menu-item-241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241 p-2 text-muted"><a href="http://www.a-nei.org/documentos/Web%202-0%20y%20Empresa.pdf">web y empresas</a></li>
+</ul>
+</li>
+ </nav>
+
+      </div>
+            
+    </div>
+
+    <main role="main" class="container">
+      <div class="row">
+      
+      <div class="col-md-8 blog-main"> 
+
+      
+ <div class="blog-post">
+            <h2 class="blog-post-title">
+                Edge Computing: la solución a los desafíos de latencia y seguridad en la era del IoT            </h2>
+           <p class="blog-post-meta">12 junio, 2023</p>            <img width="140" height="166" src="http://tecnoblog-prueba.netlify.app/wp-content/uploads/2023/06/03-2.jpg" class="attachment-grande size-grande wp-post-image" alt="" decoding="async"> 
+			<br>
+            <p>
+            </p>
+<div class="wp-block-image">
+<figure class="alignleft size-full is-resized"><img decoding="async" src="http://tecnoblog-prueba.netlify.app/wp-content/uploads/2023/06/03-2.jpg" alt="" class="wp-image-187" width="235" height="278"></figure>
+</div>
+
+<div class="taxonomy-category wp-block-post-terms">
+<a href="http://tecnoblog-prueba.netlify.app/category/digital/" rel="tag">digital</a><span class="wp-block-post-terms__separator">, </span><a href="http://tecnoblog-prueba.netlify.app/category/internet/" rel="tag">internet</a>
+</div>
+
+
+<p><em>En la era del&nbsp;<strong>Internet de las Cosas (IoT)</strong>, la demanda de&nbsp;<strong>procesamiento de datos en tiempo real</strong>&nbsp;está en constante crecimiento. Cada vez son más los&nbsp;<strong>dispositivos conectados a la red que generan y transmiten datos en tiempo real</strong>, y la infraestructura de la nube tradicional no siempre es capaz de satisfacer las necesidades de latencia y ancho de banda requeridas para procesar esta ingente cantidad de información.</em></p>
+
+
+
+<p>Es aquí donde entra en juego el&nbsp;<strong>Edge Computing</strong>, una&nbsp;<strong>tecnología emergente</strong>&nbsp;que está transformando la forma en que se lleva a cabo el tratatamiento de los datos al instante. En este artículo, explicaremos en qué consiste el Edge Computing y mostraremos algunos ejemplos prácticos de cómo esta tecnología está siendo utilizada en diversos sectores.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img decoding="async" width="458" height="326" src="http://tecnoblog-prueba.netlify.app/wp-content/uploads/2023/06/04-2.jpg" alt="" class="wp-image-188"></figure>
+</div>
+
+
+<h3 class="wp-block-heading">¿Qué es el Edge Computing?</h3>
+
+
+
+<p>Es una tecnología que consiste en llevar el&nbsp;<strong>procesamiento y almacenamiento de los datos más cerca del usuario final</strong>. En lugar de enviar todos los datos a una nube remota, el Edge Computing utiliza&nbsp;<strong>dispositivos locales</strong>&nbsp;y cercanos al usuario para procesar y almacenar los datos. Es decir, se basa en una red distribuida de dispositivos de procesamiento de datos, llamados nodos de borde o&nbsp;<strong>Edge Nodes</strong>. Estos nodos pueden ser&nbsp;<strong>dispositivos IoT, servidores Edge o cualquier otro dispositivo de procesamiento de datos capaz de procesar información en tiempo real</strong>, permitiendo reducir la latencia y mejorando la experiencia del usuario.</p>
+
+
+
+<h3 class="wp-block-heading">¿Cómo funciona el Edge Computing?</h3>
+
+
+
+<p>El Edge Computing funciona mediante el&nbsp;<strong>uso de dispositivos pequeños y eficientes, como sensores IoT, teléfonos móviles, routers, gateways y servidores</strong>, que se colocan cerca de los usuarios finales. Estos dispositivos son capaces de procesar y almacenar los datos localmente, lo que reduce la necesidad de enviar grandes cantidades de datos a través de una red.</p>
+
+
+
+<h3 class="wp-block-heading">Ventajas del Edge Computing</h3>
+
+
+
+<p>El Edge Computing ofrece una serie de ventajas frente a la infraestructura de nube tradicional, entre ellas:</p>
+
+
+
+<h4 class="wp-block-heading"><strong>✓ Latencia reducida</strong></h4>
+
+
+
+<p>Al tratar los datos en el borde de la red, es decir, el procesamiento de datos se realiza en dispositivos o sistemas que están cerca de los usuarios en lugar de procesarlos en servidores remotos en la nube, la latencia se reduce significativamente, lo que permite una&nbsp;<strong>respuesta más rápida y eficiente ante situaciones críticas</strong>.</p>
+
+
+
+<h4 class="wp-block-heading"><strong>✓ Ancho de banda reducido</strong></h4>
+
+
+
+<p>El procesamiento de datos en el borde de la red (más cerca de dónde se crean los datos) también reduce el ancho de banda necesario para el procesamiento, lo que se traduce en&nbsp;<strong>ahorros significativos en los costes de red</strong>.</p>
+
+
+
+<h4 class="wp-block-heading"><strong>✓ Mayor seguridad</strong></h4>
+
+
+
+<p>Aumenta la privacidad y la seguridad de los datos, ya que&nbsp;<strong>los datos se procesan en el dispositivo o sistema local antes de enviarlos a la nube</strong>, lo que reduce el riesgo de que los datos sean interceptados o comprometidos durante la transmisión.</p>
+
+
+
+<h3 class="wp-block-heading">Ejemplos de aplicación del Edge Computing</h3>
+
+
+
+<p>El Edge Computing se utiliza en aplicaciones en tiempo real, como la&nbsp;<strong>realidad aumentada</strong>, los&nbsp;<strong>vehículos autónomos</strong>&nbsp;y los&nbsp;<strong>dispositivos IoT</strong>, donde la latencia es crítica.</p>
+
+
+
+<p>A continuación se exponen algunos ejemplos de las aplicaciones prácticas de Edge Computing que están transformando diversos sectores en la actualidad.</p>
+
+
+
+<ul>
+<li>
+<strong>Agricultura de precisión</strong>: el Edge Computing se utiliza en la agricultura de precisión para recolectar y procesar datos de sensores y drones en tiempo real. Estos datos se usan para&nbsp;<strong>optimizar el rendimiento de los cultivos, mejorar la eficiencia de los recursos y reducir los costes</strong>. Los sensores se colocan cerca de los cultivos y los datos se procesan localmente para garantizar una respuesta rápida.<br>
+</li>
+
+
+
+<li>
+<strong>Vehículos autónomos</strong>: también se usa en los vehículos autónomos para procesar datos de sensores en tiempo real. Los sensores se utilizan para recopilar información sobre el entorno del vehículo, como la posición, la velocidad y la distancia. Estos datos se procesan localmente en el vehículo para&nbsp;<strong>garantizar una respuesta rápida y mejorar la seguridad del vehículo</strong>.<br>
+</li>
+
+
+
+<li>
+<strong>Asistencia sanitaria remota</strong>: permite mejorar la calidad de la atención al paciente. Los dispositivos de monitoreo se colocan cerca del paciente para&nbsp;<strong>recopilar información sobre su salud en tiempo real</strong>&nbsp;como datos biométricos, la frecuencia cardíaca y la presión arterial. Estos datos se procesan localmente y se envían a los profesionales de la salud para que puedan tomar decisiones rápidas y precisas.<br>
+</li>
+
+
+
+<li>
+<strong>Gaming en la nube</strong>: reduce la latencia y mejora la experiencia del usuario. Los servidores de juegos se ubican cerca de los jugadores para procesar los datos localmente y reducir la cantidad de datos que se envían a través de la red. Esto&nbsp;<strong>garantiza una experiencia de juego más rápida y fluida</strong>.<br>
+</li>
+
+
+
+<li>
+<strong>Ciudades inteligentes</strong>: se utiliza en el control de edificios inteligentes para procesar y almacenar datos localmente. Los sensores, cámaras y dispositivos IoT recopilan información sobre el edificio, como la temperatura, la humedad y la iluminación. Estos datos se procesan localmente para controlar los sistemas de calefacción, ventilación y aire acondicionado, lo que&nbsp;<strong>mejora la eficiencia energética y permite una gestión más inteligente de los recursos</strong>.<br>
+</li>
+
+
+
+<li>
+<strong>Banca Digital</strong>: en la banca digital, la implementación de Edge Computing permite el análisis al instante de grandes volúmenes de datos financieros y la detección de fraude en transacciones financieras en tiempo real por lo que su uso&nbsp;<strong>mejora la seguridad, la velocidad y la eficiencia de las operaciones financieras</strong>.<br>
+</li>
+</ul>
+         
+            
+        </div>
+<!-- /.blog-post -->
+
+        </div>
+<!-- /.blog-main -->
+        <aside class="col-md-4 blog-sidebar">
+  </aside>
+
+               <!-- /.blog-sidebar -->
+      </div>
+<!-- /.row -->
+
+    </main><!-- /.container -->
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a>@adalid</a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    
+    <script>Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+      });</script>
+  </body>
+</html>
